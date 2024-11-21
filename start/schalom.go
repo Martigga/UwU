@@ -5,7 +5,11 @@ Zweck: Lokale Globale Variablen
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"start/array"
+	"start/klassen"
+)
 
 var x int = 42 // globale variable = 42 (gilt für alle die keine deklariert haben)
 
@@ -73,4 +77,10 @@ func main() {
 	fmt.Println("x10:", x)
 
 	function6(x)
+
+	array.Rawr()
+
+	var andreas = klassen.TeletubbyFreiErstellen()
+	fmt.Println(andreas)
+
 }

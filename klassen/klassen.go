@@ -4,12 +4,10 @@ Zweck: Verdeutlichung der Funktionsweise von Structs als
 Konstruktionen von Klassen
 */
 
-package main
+package klassen
 
 import (
 	"fmt"
-	"math/rand"
-	"time"
 )
 
 //////////////////////// Klasse Teletubby ////////////////////////
@@ -24,17 +22,20 @@ type Teletubby struct {
 	initiative int    // Geschwindigkeit beim Angriff
 }
 
+/*
 // rand.Intn(100)
 func zufall(max int) int {
 
 	rand.Seed(time.Now().UnixNano())
 	fmt.Println(rand.Int(), "Unixnano von Time.Now: ", time.Now().UnixNano())
 	return rand.Int()
-}
+}*/
 
 //////////////////// Kampf ////////////////////
 
 func TeletubbyVsTeletubby(TeleMaxim, Teleziggi *Teletubby) {
+
+	for 
 
 }
 
@@ -149,6 +150,7 @@ func TeletubbyFreiErstellen() *Teletubby {
 	return Teletubby
 }
 
+/*
 func main() {
 
 	// Erstellung TeleMaxim als objekt der Klasse Teletubby
@@ -187,3 +189,4 @@ func main() {
 	fmt.Println(Telemumu)
 
 }
+*/

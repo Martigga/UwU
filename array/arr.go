@@ -1,10 +1,10 @@
-package main
+package array
 
 import "fmt"
 
 ////////////// Array //////////////
 
-func main() {
+func Rawr() {
 
 	var feld1 [8]int                         //Deklaration eines felds/Arrays
 	var feld2 [5]int = [5]int{1, 2, 3, 4, 5} //Deklaration und Initialisierung mit Werten
@@ -15,14 +15,12 @@ func main() {
 	fmt.Println(feld1[4])
 
 	fmt.Println(feld2)
-	fmt.Println(feld3)^
+	fmt.Println(feld3)
 
 	// feld1 = feld3 		funktioniert nicht
 
-	for i := 0; i < count; i++ {
-		
-	} i:=0; i<len(feld3); i++ {
-		feld1[i]=feld3[i]
+	for i := 0; i < len(feld3); i++ {
+		feld1[i] = feld3[i]
 	}
 
 	fmt.Println(feld1)
