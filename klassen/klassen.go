@@ -33,11 +33,11 @@ func zufall(max int) int {
 
 //////////////////// Kampf ////////////////////
 
-func TeletubbyVsTeletubby(TeleMaxim, Teleziggi *Teletubby) {
+// func TeletubbyVsTeletubby(TeleMaxim, Teleziggi *Teletubby) {
 
-	for 
+// 	for
 
-}
+// }
 
 const bSchaden = 10
 const bGesundheit = 100
