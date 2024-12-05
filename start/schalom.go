@@ -11,6 +11,25 @@ import (
 	"start/klassen"
 )
 
+func NeueWaffe() {
+
+	return w.
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var x int = 42 // globale variable = 42 (gilt für alle die keine deklariert haben)
 
 func function1() {
