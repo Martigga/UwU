@@ -9,26 +9,14 @@ import (
 	"fmt"
 	"start/array"
 	"start/klassen"
+	"start/gear"
 )
 
-func NeueWaffe() {
+func test(waffe *Waffe) {
 
-	return w.
+	var
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var x int = 42 // globale variable = 42 (gilt für alle die keine deklariert haben)
 
