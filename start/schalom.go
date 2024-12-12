@@ -13,8 +13,8 @@ import (
 )
 
 func test(waffe *Waffe) {
-
-	var
+	var 
+	fmt.Println("Setall", Setall)
 
 }
 
