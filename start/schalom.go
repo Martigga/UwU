@@ -8,15 +8,7 @@ package main
 import (
 	"fmt"
 	"start/array"
-	"start/klassen"
-	"start/gear"
 )
-
-func test(waffe *Waffe) {
-	var 
-	fmt.Println("Setall", Setall)
-
-}
 
 var x int = 42 // globale variable = 42 (gilt für alle die keine deklariert haben)
 
@@ -86,8 +78,5 @@ func main() {
 	function6(x)
 
 	array.Rawr()
-
-	var andreas = klassen.TeletubbyFreiErstellen()
-	fmt.Println(andreas)
 
 }

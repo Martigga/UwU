@@ -4,13 +4,15 @@ Zweck: Verdeutlichung der Funktionsweise von Structs als
 Konstruktionen von Klassen
 */
 
-package klassen
+package main
 
 import (
 	"fmt"
+	"math/rand"
+	"strings"
 )
 
-//////////////////////// Klasse Teletubby ////////////////////////
+//////////////////////// Klasse Teletubby1 ////////////////////////
 
 // type erzeugt einen eigenen Datentyp
 // struct erzeugt einen zusammengesetzen Datentyp
@@ -23,52 +25,35 @@ type Teletubby struct {
 }
 
 /*
-// rand.Intn(100)
-func zufall(max int) int {
-
-	rand.Seed(time.Now().UnixNano())
-	fmt.Println(rand.Int(), "Unixnano von Time.Now: ", time.Now().UnixNano())
-	return rand.Int()
-}*/
-
-//////////////////// Kampf ////////////////////
-
-// func TeletubbyVsTeletubby(TeleMaxim, Teleziggi *Teletubby) {
-
-// 	for
-
-// }
 
 const bSchaden = 10
 const bGesundheit = 100
-const bAbwehr = 2
 const bInitiative = 1
 
-func falscheBelegung(Teletubby Teletubby) {
+func richtigeBelegung(Teletubby1 *Teletubby) {
 
-	Teletubby.schaden = 20
-	Teletubby.gesundheit = 100
-	Teletubby.name = "TeleMaxim"
-	Teletubby.abwehr = 2
-	Teletubby.initiative = 4
+	Teletubby1.schaden = bSchaden
+	Teletubby1.gesundheit = bGesundheit
+	Teletubby1.name = "TeleMaxim"
+	Teletubby1.initiative = bInitiative
 
-	fmt.Println("Teleziggi in Funktion falschbelegung", Teletubby)
-	// Teletubby wurde global geändert
-
-}
-
-func richtigeBelegung(Teletubby *Teletubby) {
-
-	Teletubby.schaden = bSchaden
-	Teletubby.gesundheit = bGesundheit
-	Teletubby.name = "TeleMaxim"
-	Teletubby.abwehr = bAbwehr
-	Teletubby.initiative = bInitiative
-
-	fmt.Println("Teleziggi in Funktion richtigebelegung", Teletubby)
-	// Teletubby wurde global geändert
+	fmt.Println("Teleziggi in Funktion richtigebelegung", Teletubby1)
+	// Teletubby1 wurde global geändert
 
 }
+
+func richtigeBelegung2(TeleMaxim *Teletubby) {
+
+	TeleMaxim.schaden = bSchaden
+	TeleMaxim.gesundheit = bGesundheit
+	TeleMaxim.name = "TeleMaxim"
+	TeleMaxim.initiative = bInitiative
+
+	fmt.Println("Teleziggi in Funktion richtigebelegung", TeleMaxim)
+	// Teletubby1 wurde global geändert
+
+}
+*/
 
 /////////// Standartverfahren zur Erstellung und Änderung von Objekten ///////////
 
@@ -76,44 +61,44 @@ func richtigeBelegung(Teletubby *Teletubby) {
 
 // Getter und Setter
 
-func (Teletubby *Teletubby) GetName() string {
-	return Teletubby.name
+func (Teletubby1 *Teletubby) GetName() string {
+	return Teletubby1.name
 }
 
-func (Teletubby *Teletubby) SetName(na string) {
-	Teletubby.name = na
+func (Teletubby1 *Teletubby) SetName(na string) {
+	Teletubby1.name = na
 }
 
-func (Teletubby *Teletubby) GetSchaden() int {
-	return Teletubby.schaden
+func (Teletubby1 *Teletubby) GetSchaden() int {
+	return Teletubby1.schaden
 }
 
-func (Teletubby *Teletubby) SetSchaden(sp int) {
-	Teletubby.schaden = sp
+func (Teletubby1 *Teletubby) SetSchaden(sp int) {
+	Teletubby1.schaden = sp
 }
 
-func (Teletubby *Teletubby) GetGesundheit() int {
-	return Teletubby.gesundheit
+func (Teletubby1 *Teletubby) GetGesundheit() int {
+	return Teletubby1.gesundheit
 }
 
-func (Teletubby *Teletubby) SetGesundheit(hp int) {
-	Teletubby.gesundheit = hp
+func (Teletubby1 *Teletubby) SetGesundheit(GesGetGesundheit int) {
+	Teletubby1.gesundheit = GesGetGesundheit
 }
 
-func (Teletubby *Teletubby) GetAbwehr() int {
-	return Teletubby.abwehr
+func (Teletubby1 *Teletubby) GetAbwehr() int {
+	return Teletubby1.abwehr
 }
 
-func (Teletubby *Teletubby) SetAbwehr(def int) {
-	Teletubby.abwehr = def
+func (Teletubby1 *Teletubby) SetAbwehr(def int) {
+	Teletubby1.abwehr = def
 }
 
-func (Teletubby *Teletubby) GetInitiative() int {
-	return Teletubby.initiative
+func (Teletubby1 *Teletubby) GetInitiative() int {
+	return Teletubby1.initiative
 }
 
-func (Teletubby *Teletubby) SetInitiative(init int) {
-	Teletubby.initiative = init
+func (Teletubby1 *Teletubby) SetInitiative(init int) {
+	Teletubby1.initiative = init
 }
 
 func NeuerTeletubby() *Teletubby {
@@ -122,71 +107,150 @@ func NeuerTeletubby() *Teletubby {
 }
 
 func TeletubbyFreiErstellen() *Teletubby {
-	var Teletubby = NeuerTeletubby()
+	var Teletubby1 = NeuerTeletubby()
 
 	var wert int
 	var symb string
 
 	fmt.Print("Lege deinen Namen fest: ")
 	fmt.Scanln(&symb)
-	Teletubby.SetName(symb)
+	Teletubby1.SetName(symb)
 
 	fmt.Print("Lege deinen Schaden fest: ")
 	fmt.Scanln(&wert)
-	Teletubby.SetSchaden(wert)
+	Teletubby1.SetSchaden(wert)
 
 	fmt.Print("Lege deine Gesundheit fest: ")
 	fmt.Scanln(&wert)
-	Teletubby.SetGesundheit(wert)
+	Teletubby1.SetGesundheit(wert)
 
 	fmt.Print("Lege deine Abwehr fest: ")
 	fmt.Scanln(&wert)
-	Teletubby.SetAbwehr(wert)
+	Teletubby1.SetAbwehr(wert)
 
 	fmt.Print("Lege deine Initiative fest: ")
 	fmt.Scanln(&wert)
-	Teletubby.SetInitiative(wert)
+	Teletubby1.SetInitiative(wert)
 
-	return Teletubby
+	return Teletubby1
 }
 
-/*
+func TeletubbyFreiErstellen2() *Teletubby {
+	var TeleMaxim = NeuerTeletubby()
+
+	var wert int
+	var symb string
+
+	fmt.Print("Lege deinen Namen fest: ")
+	fmt.Scanln(&symb)
+	TeleMaxim.SetName(symb)
+
+	fmt.Print("Lege deinen Schaden fest: ")
+	fmt.Scanln(&wert)
+	TeleMaxim.SetSchaden(wert)
+
+	fmt.Print("Lege deine Gesundheit fest: ")
+	fmt.Scanln(&wert)
+	TeleMaxim.SetGesundheit(wert)
+
+	fmt.Print("Lege deine Abwehr fest: ")
+	fmt.Scanln(&wert)
+	TeleMaxim.SetAbwehr(wert)
+
+	fmt.Print("Lege deine Initiative fest: ")
+	fmt.Scanln(&wert)
+	TeleMaxim.SetInitiative(wert)
+
+	return TeleMaxim
+}
+
+////////////// Rich Görman attack/ /////////////////
+
+func attack(Teletubby1, TeleMaxim *Teletubby) {
+	TeleMaxim.SetGesundheit(TeleMaxim.GetGesundheit() - Teletubby1.GetSchaden())
+	fmt.Println(Teletubby1.GetName(), "macht", Teletubby1.GetSchaden(), "Schaden an", TeleMaxim.GetName()) ///////Funktion für den Ork
+	if TeleMaxim.GetGesundheit() < 0 {
+		TeleMaxim.SetGesundheit(0)
+	}
+}
+
+///////////////////// Kampf ///////////////////////
+
+func Kampf(Teletubby1, TeleMaxim *Teletubby) {
+	for runden := 0; Teletubby1.GetGesundheit() > 0 && TeleMaxim.GetGesundheit() > 0; runden++ {
+		var weiter bool = true
+
+		if rand.Intn(2) == 1 {
+			attack(Teletubby1, TeleMaxim)
+		} else {
+			attack(Teletubby1, TeleMaxim)
+		}
+
+		if Teletubby1.GetGesundheit() == 0 || TeleMaxim.GetGesundheit() == 0 {
+			fmt.Println("\n Der Kampf ist vorbei!")
+			weiter = false
+		}
+
+		fmt.Println(Teletubby1.GetName(), "hat", Teletubby1.GetGesundheit(), "Leben.")
+		fmt.Println(TeleMaxim.GetName(), "hat", TeleMaxim.GetGesundheit(), "Leben.")
+
+		if Teletubby1.GetGesundheit() != 0 && TeleMaxim.GetGesundheit() != 0 {
+			var answer string
+			fmt.Println("\nMöchtest du eine weitere Runde kämpfen?")
+			fmt.Scanln(&answer)
+			if strings.ToLower(answer) == "nein" {
+				weiter = false
+			} else {
+				fmt.Println("Zu Schade, du hast nicht nein geschrieben. Es gibt eine weitere Runde.")
+			}
+			if !weiter {
+				fmt.Println("Der Kampf ist Vorbei: ", Teletubby1.GetName(), "hat", Teletubby1.GetGesundheit(), "Leben.")
+				fmt.Println("                      ", TeleMaxim.GetName(), "hat", TeleMaxim.GetGesundheit(), "Leben.")
+				break
+			}
+		}
+	}
+}
+
 func main() {
 
-	// Erstellung TeleMaxim als objekt der Klasse Teletubby
-	var TeleMaxim Teletubby
+	// Erstellung TeleMaxim als objekt der Klasse Teletubby1
+	var TeleMaxim *Teletubby
 	fmt.Println("Der erste Teletubby TeleMaxim", TeleMaxim)
 
-	falscheBelegung(TeleMaxim)
-	fmt.Println("TeleMaxim in der main", TeleMaxim) // TeleMaxim wurde nicht synchronisiert
-
 	// Erstellung von Teleziggi NUR als Adressvariable
-	var Teleziggi *Teletubby
+	var Teletubby1 *Teletubby
 
-	fmt.Println("\nTeleziggi nach der Erstellung", Teleziggi)
+	fmt.Println("\nTeleziggi nach der Erstellung", Teletubby1)
 
 	// richtigeBelegung(Teleziggi)	// Teleziggi enthält noch keine Adresse, Funktion dubktioniert nicht
 
-	Teleziggi = new(Teletubby)
-	fmt.Println("\nTeleziggi nach der Initialisierung", Teleziggi)
-	richtigeBelegung(Teleziggi)
-	fmt.Println("Teleziggi in der main", Teleziggi) // Teleziggi wurde lokal geändert
-	fmt.Println("Adresse von Teleziggi", &Teleziggi)
-	fmt.Println("Inhalt an der Adresse von Teleziggi", *Teleziggi)
-	fmt.Println("Inhalt de Adressevariablen Teleziggi", Teleziggi) //
+	/*
+		Teleziggi = new(Teletubby1)
+		fmt.Println("\nTeleziggi nach der Initialisierung", Teleziggi)
+		fmt.Println("Teleziggi in der main", Teleziggi) // Teleziggi wurde lokal geändert
+		fmt.Println("Adresse von Teleziggi", &Teleziggi)
+		fmt.Println("Inhalt an der Adresse von Teleziggi", *Teleziggi)
+		fmt.Println("Inhalt de Adressevariablen Teleziggi", Teleziggi) //
+	*/
 
-	//Teletubby mit Funktion erstellen
+	//Teletubby1 mit Funktion erstellen
 	var Telebussy = NeuerTeletubby()
 	fmt.Println("\nTeletubby")
 	fmt.Println(Telebussy)
-	Telebussy.SetSchaden(10000)
 	Telebussy.GetSchaden()
 	fmt.Println("Schaden: ", Telebussy.GetSchaden())
 
-	//Teletubby frei nach Nutzer erstellen
+	//Teletubby1 frei nach Nutzer erstellen
 
 	var Telemumu = TeletubbyFreiErstellen()
 	fmt.Println(Telemumu)
 
+	var answer string
+	fmt.Print("Möchtest du, dass -", Teletubby1, "- und -", TeleMaxim, "- kämpfen? Ja oder Nein?")
+	fmt.Scanln(&answer)
+	if strings.ToLower(answer) == "ja" {
+		Kampf(Teletubby1, TeleMaxim)
+	}
+
 }
-*/
