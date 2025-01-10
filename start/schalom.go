@@ -7,7 +7,6 @@ package main
 
 import (
 	"fmt"
-	"start/array"
 )
 
 var x int = 42 // globale variable = 42 (gilt für alle die keine deklariert haben)
@@ -76,7 +75,5 @@ func main() {
 	fmt.Println("x10:", x)
 
 	function6(x)
-
-	array.Rawr()
 
 }

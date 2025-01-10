@@ -7,8 +7,8 @@ package ork
 
 import (
 	"math/rand/v2"
-	"orkVsElf/waffe"
-	"orkVsElf/wesen"
+	"start/waffe"
+	"start/wesen"
 )
 
 /////////////////////// globale Konstanten und Variablen ////////////////////////////////
@@ -17,7 +17,6 @@ import (
 // hier die Basiswerte eines Orks
 const bwSchaden int = 20
 const bwGesundheit int = 100
-const bwName string = "unbekannt"
 const bwAbwehr int = 5
 const bwInitiative int = 4
 
@@ -73,7 +72,7 @@ func (o *Ork) Basiswerte() { // (ork *Ork) bindet diese Funktion an ein Objekt v
 ///// Methoden zur Waffe
 
 // dem Ork eine neue Waffe geben
-func (o *Ork) SetWaffe(w *Waffe) {
+func (o *Ork) SetWaffe(w *waffe.Waffe) {
 	o.owaffe = w
 }
 

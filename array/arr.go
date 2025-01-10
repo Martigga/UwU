@@ -1,10 +1,13 @@
 package array
 
-import "fmt"
+import (
+	"fmt"
+	"start/ork"
+)
 
 ////////////// Array //////////////
 
-func Rawr() {
+func rawr() {
 
 	var feld1 [8]int                         //Deklaration eines felds/Arrays
 	var feld2 [5]int = [5]int{1, 2, 3, 4, 5} //Deklaration und Initialisierung mit Werten
@@ -26,4 +29,12 @@ func Rawr() {
 	fmt.Println(feld1)
 	feld4 = feld2
 	fmt.Println(feld4)
+
+	var squads [4][4]*ork.Ork
+	fmt.Println(squads)
+
+	for i := 0; i < len(squads); i++ {
+
+	}
+
 }

@@ -11,7 +11,7 @@ import (
 	"math/rand"
 
 	//"time"
-	"orkVsElf/ork"
+	"start/ork"
 )
 
 // Vor.: -
@@ -25,7 +25,7 @@ func zufall(max int) int {
 ////////////////// Kampf //////////////////////
 
 func OrkVsOrk(ork1, ork2 *ork.Ork) {
-
+	fmt.Println("his")
 }
 
 ///////////////// Hilfsfunktionen /////////////////////
@@ -54,7 +54,7 @@ func richtigeBelegung (ork *Ork) {
 	// ork wurde global geändert, weil die Adresse verwendet wurde
 }
 
-*/
+
 
 // Vor.: -
 // Effekt.: Nutzer kann einen neuen Ork mit eigenen Werten erstellen
@@ -92,7 +92,7 @@ func OrkFreiErstellen() *ork.Ork {
 
 	return ork1
 }
-
+*/
 //////////////////////////////// MAIN //////////////////////////////////////////
 
 func Main() {
@@ -128,7 +128,7 @@ func Main() {
 	/////////// Standardverfahren zur Erstellung und Änderung von Objekten /////////////////
 
 	// Objekt wird über eine Funktion erstellt
-	var ork3 = ork.NeuerOrk()
+	var ork3 *ork.Ork = ork.NeuerOrk()
 	fmt.Println("\nork3 erstellt mit Funktion NeuerOrk:", ork3)
 
 	// das Objekt ork3 ruft die Methode Basiswerte() auf

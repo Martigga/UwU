@@ -1,80 +1,74 @@
+/* Name: Herker
+ * Datum: 13.12.2024
+ * Zweck: Klasse "Wesen" als Oberklasse für z. B. Ork und Elf
+ */
+
 package wesen
 
 type Wesen struct {
-	bschaden    int
-	bgesundheit int
-	babwehr     int
-	binitiative int
-	bname       string
+	schaden int		// Schaden, der verursacht wird
+	gesundheit int	// Lebenspunkte
+	name string		// Name des Wesens
+	abwehr int		// Abwehrkraft des Wesens
+	initiative int	// Geschwindigkeit beim Angriff (1 schnell, 5 langsam)
 }
 
-func Neuwesen() *Wesen {
-
-	var b *Wesen = new(Wesen)
-	b.bschaden = 20
-	b.bgesundheit = 100
-	b.babwehr = 2
-	b.binitiative = 4
-	b.bname = "Wesen"
-
-	return b
-
+/////////////// Getter und Setter //////////////////
+func (w *Wesen) GetSchaden() int {
+	return w.schaden
+}
+func (w *Wesen) SetSchaden(sp int) {
+	w.schaden = sp
 }
 
-//////////////////// Setter ////////////////////////
-
-func (b *Wesen) SetSchaden(x int) {
-	b.bschaden = x
+func (w *Wesen) GetGesundheit() int {
+	return w.gesundheit
+}
+func (w *Wesen) SetGesundheit(gp int) {
+	w.gesundheit = gp
 }
 
-func (b *Wesen) SetGesundheit(x int) {
-	b.bgesundheit = x
+func (w *Wesen) GetNamen() string {
+	return w.name
+}
+func (w *Wesen) SetNamen(n string) {
+	w.name = n
 }
 
-func (b *Wesen) Setabwehr(x int) {
-	b.babwehr = x
+func (w *Wesen) GetAbwehr() int {
+	return w.abwehr
+}
+func (w *Wesen) SetAbwehr(ap int) {
+	w.abwehr = ap
 }
 
-func (b *Wesen) SetInitiative(x int) {
-	b.binitiative = x
+func (w *Wesen) GetInitiative() int {
+	return w.abwehr
 }
 
-func (b *Wesen) SetName(x string) {
-	b.bname = x
+func (w *Wesen) SetInitiative(i int) {
+	w.initiative = i
 }
 
-func (b *Wesen) SetAll(bs, bg, ba, bi int, bn string) {
-
-	b.bschaden = bs
-	b.bgesundheit = bg
-	b.babwehr = ba
-	b.binitiative = bi
-	b.bname = bn
-
+// Reihenfolge: Schaden,Gesundheit,Abwehr,Initiative,Name
+func (w *Wesen) GetAll()(int,int,int,int,string) {
+	return w.schaden,w.gesundheit,w.abwehr,w.initiative,w.name
 }
 
-/////////////// Getter ///////////////
-
-func (b *Wesen) GetSchaden(x int) {
-	b.bschaden = x
+// Reihenfolge: Schaden,Gesundheit,Abwehr,Initiative,Name
+func (w *Wesen) SetAll(s,g,a,i int, n string) {
+	w.schaden = s
+	w.gesundheit = g
+	w.name = n
+	w.abwehr = a
+	w.initiative = i
 }
 
-func (b *Wesen) GetGesundheit(x int) {
-	b.bgesundheit = x
+/////////////////// Konstruktor //////////////////////////
+
+func NeuesWesen() *Wesen {
+	var w *Wesen = new(Wesen)
+	return w
 }
 
-func (b *Wesen) GetAbwehr(x int) {
-	b.babwehr = x
-}
 
-func (b *Wesen) GetInitiative(x int) {
-	b.binitiative = x
-}
-
-func (b *Wesen) GetName(x string) {
-	b.bname = x
-}
-
-func (b *Wesen) GetAll() (int, int, int, int, string) {
-	return b.bschaden, b.bgesundheit, b.babwehr, b.binitiative, b.bname
-}
